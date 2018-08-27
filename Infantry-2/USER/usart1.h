@@ -1,0 +1,44 @@
+#include "stm32f4xx.h" 
+#include "remote_task.h"
+
+
+
+ 
+
+
+
+void usart1_config(float bound);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

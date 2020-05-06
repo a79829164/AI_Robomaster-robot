@@ -1,7 +1,7 @@
 # 2018-ICRA_Robomaster
 2018 ICRA Robomaster AI Chanllenge (International 6th). 
 
-#Robotic System
+# Robotic System
 ![image](https://github.com/professor1996/2018-ICRA_Robomaster/blob/master/demo/Robot%20Hardware%20Frame.png)
 
 

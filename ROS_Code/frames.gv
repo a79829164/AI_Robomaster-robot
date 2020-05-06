@@ -1,0 +1,27 @@
+digraph G {
+"odom" -> "base_link"[label="Broadcaster: /odom_broadcaster\nAverage rate: 38.110 Hz\nMost recent transform: 1522926690.462 ( 0.054 sec old)\nBuffer length: 5.196 sec\n"];
+"map" -> "odom"[label="Broadcaster: /tf_map_odom\nAverage rate: 24.964 Hz\nMost recent transform: 1522926690.547 ( -0.032 sec old)\nBuffer length: 4.847 sec\n"];
+"base_link" -> "gimbal_link"[label="Broadcaster: /control\nAverage rate: 109.928 Hz\nMost recent transform: 1522926690.508 ( 0.007 sec old)\nBuffer length: 4.931 sec\n"];
+"gimbal_link" -> "camera_link"[label="Broadcaster: /control\nAverage rate: 109.928 Hz\nMost recent transform: 1522926690.508 ( 0.007 sec old)\nBuffer length: 4.931 sec\n"];
+"robo_link" -> "px4_link"[label="Broadcaster: /imu_filter_gain_node\nAverage rate: 80.210 Hz\nMost recent transform: 1522926690.502 ( 0.014 sec old)\nBuffer length: 4.937 sec\n"];
+"uwb_link" -> "robo_link"[label="Broadcaster: /tf_broadcaster\nAverage rate: 78.114 Hz\nMost recent transform: 1522926690.503 ( 0.012 sec old)\nBuffer length: 4.839 sec\n"];
+"local_origin" -> "local_origin_ned"[label="Broadcaster: /mavros\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1522926690.515 sec old)\nBuffer length: 0.000 sec\n"];
+"fcu" -> "fcu_frd"[label="Broadcaster: /mavros\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1522926690.515 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "laser"[label="Broadcaster: /tf_laser_base\nAverage rate: 24.992 Hz\nMost recent transform: 1522926690.532 ( -0.017 sec old)\nBuffer length: 4.801 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1522926690.515"[ shape=plaintext ] ;
+ }->"local_origin";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1522926690.515"[ shape=plaintext ] ;
+ }->"fcu";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1522926690.515"[ shape=plaintext ] ;
+ }->"map";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1522926690.515"[ shape=plaintext ] ;
+ }->"uwb_link";
+}

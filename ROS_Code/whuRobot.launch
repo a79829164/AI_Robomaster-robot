@@ -1,0 +1,15 @@
+<launch>
+<node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode">
+  <param name="serial_port"         type="string" value="/dev/ttyUSBA0"/>  
+  <param name="serial_baudrate"     type="int"    value="115200"/>
+  <param name="frame_id"            type="string" value="laser"/>
+  <param name="inverted"            type="bool"   value="false"/>
+  <param name="angle_compensate"    type="bool"   value="true"/>
+  </node>
+  
+<node pkg="armor_detect" type="armor_detect" name="vision" />
+
+<include file="$(find control)/launch/tf.launch" />
+<!--<include file="$(find planning)/launch/move_base.launch"/>
+<node name="rviz" pkg="rviz" type="rviz"/>-->
+</launch>

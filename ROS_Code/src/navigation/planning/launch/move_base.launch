@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find planning)/launch/amcl_omni.launch" /> 
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="controller_frequency" value="8.0"/>
+<param name="recovery_behavior_enabled" value="true"/>
+<param name="clearing_rotation_allowed" value="false"/>
+
+<!-- base_local_planner/TrajectoryPlannerROS    dwa_local_planner/DWAPlannerROS   eband_local_planner/EBandPlannerROS   teb_local_planner/TebLocalPlannerROS   -->
+
+<param name="base_local_planner" value="eband_local_planner/EBandPlannerROS"/>
+
+    <rosparam file="$(find planning)/config/common_costmap_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find planning)/config/common_costmap_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find planning)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find planning)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find planning)/config/eband_local_planner_params.yaml" command="load" />
+  </node>
+
+</launch>
